@@ -61,4 +61,17 @@ public class ScannerHelper {
             System.out.println("Invalid Choice.");
         }
     }
+    public static String readMobileNumber(Scanner scanner,String prompt) {
+        String mobileRegex = "^[6-9]\\d{9}$";
+        while (true) {
+            System.out.print(prompt);
+            String value = scanner.nextLine();
+            if(value.matches(mobileRegex)) {
+                return value;
+            }else{
+                System.out.println("Invalid Mobile Number.");
+                System.out.println("Indian Mobile Number Start with 6,7,8 and 9.");
+            }
+        }
+    }
 }
