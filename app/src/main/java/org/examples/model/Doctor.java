@@ -1,17 +1,21 @@
 package org.examples.model;
+
+import org.examples.enums.Shift;
+import org.examples.enums.Specialization;
+
 public class Doctor {
 
-    public String id;
-    public String name;
-    public String specification;
-    public int experience;
-    public String shift;
+    private String id;
+    private String name;
+   private Specialization specification;
+    private int experience;
+    private Shift shift;
 
     public Doctor(String id,
                   String name,
-                  String specification,
+                  Specialization specification,
                   int experience,
-                  String shift) {
+                 Shift shift) {
 
         this.id = id;
         this.name = name;

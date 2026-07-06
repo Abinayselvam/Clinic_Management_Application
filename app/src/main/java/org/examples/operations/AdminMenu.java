@@ -1,5 +1,7 @@
 package org.examples.operations;
 
+import org.examples.enums.Shift;
+import org.examples.enums.Specialization;
 import org.examples.helper.ScannerHelper;
 import org.examples.model.Doctor;
 
@@ -46,10 +48,10 @@ public class AdminMenu {
             String  generatedID = String.format("D%04d", idCounter++);
             //Get Doctor Details
             String name = ScannerHelper.readString("Enter Name : ");
-            String specification = ScannerHelper.readString("Enter Specification : ");
+            Specialization specialization = ScannerHelper.readEnumChoice("Select Specialization",Specialization.values());
             int experience = ScannerHelper.readInt("Enter Experience : ");
-            String shift= ScannerHelper.readString("Enter Shift : ");
-            Doctor doctor = new Doctor(generatedID,name,specification,experience,shift);
+            Shift shift= ScannerHelper.readEnumChoice( "Enter Shift : ",Shift.values());
+            Doctor doctor = new Doctor(generatedID,name,specialization,experience,shift);
             doctorsDetails.add(doctor);
 
             System.out.println("\nDoctor Registered Successfully. Doctor ID:"+generatedID);
