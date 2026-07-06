@@ -5,10 +5,7 @@ import org.examples.enums.Shift;
 import org.examples.enums.Specialization;
 import org.examples.helper.ScannerHelper;
 import org.examples.model.Doctor;
-
-import javax.print.Doc;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class AdminMenu {
    private static ArrayList<Doctor> doctorsDetails = new ArrayList<>();
