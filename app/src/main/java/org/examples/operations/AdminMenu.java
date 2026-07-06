@@ -1,5 +1,6 @@
 package org.examples.operations;
 
+import org.examples.data.FileHandler;
 import org.examples.enums.Shift;
 import org.examples.enums.Specialization;
 import org.examples.helper.ScannerHelper;
@@ -61,7 +62,21 @@ public class AdminMenu {
     }
     private static void bulkEntry()
     {
-      System.out.println("Welcome to Bulk Entry");
+        System.out.println("Welcome to Bulk Entry");
+        String filename = ScannerHelper.readString("Enter Filename : ");
+        ArrayList<Doctor> importedDoctors =
+                FileHandler.bulkLoadDoctors(filename, doctorsDetails.size());
+        if(!importedDoctors.isEmpty())
+        {
+            doctorsDetails.addAll(importedDoctors);
+            idCounter += importedDoctors.size();
+            System.out.println(importedDoctors.size()
+                    + " Doctors Imported Successfully.");
+        }else{
+            System.out.println("Upload failed or file was empty.");
+        }
+
+
     }
     private static void viewAuditLogs()
     {
