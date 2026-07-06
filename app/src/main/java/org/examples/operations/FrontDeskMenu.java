@@ -7,12 +7,11 @@ import java.util.Scanner;
 public class FrontDeskMenu {
   public static void show()
   {
-      Scanner sc = new Scanner(System.in);
       boolean exitSystem = false;
             while (!exitSystem) {
                 System.out.println("----WELCOME TO FRONT DESK MANAGEMENT----\n");
                 System.out.println("Select persona 1.Register new patient 2.Book new appointment 3.Exit\n");
-                int choice = ScannerHelper.readIntegerInputScanner(sc);
+                int choice = ScannerHelper.readInt("Enter your choice: ");
           switch(choice)
           {
               case 1: registerPatient(); break;
