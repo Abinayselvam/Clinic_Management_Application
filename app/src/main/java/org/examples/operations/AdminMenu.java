@@ -1,32 +1,20 @@
 package org.examples.operations;
 
 import org.examples.helper.ScannerHelper;
+import org.examples.model.Doctor;
 
+import javax.print.Doc;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AdminMenu {
-    // Doctor 1
-    private static String doctorName1;
-    private static String specialization1;
-    private static int experience1;
-    private static String shift1;
-
-    // Doctor 2
-    private static String doctorName2;
-    private static String specialization2;
-    private static int experience2;
-    private static String shift2;
-
-    // Doctor 3
-    private static String doctorName3;
-    private static String specialization3;
-    private static int experience3;
-    private static String shift3;
+   private static ArrayList<Doctor> doctorsDetails = new ArrayList<>();
+   //counter to track the serious id
+    private static int idCounter =1;
     public static void show()
     {
 
         boolean exitSystem = false;
-
         while(!exitSystem)
             {
                 System.out.println("----WELCOME TO CLINIC ADMIN MENU----\n");
@@ -48,28 +36,25 @@ public class AdminMenu {
     }
     private static void doctorEntry()
     {
-        System.out.println("\nEnter Doctor 1 Details");
+        System.out.println("Register the New Doctor Entry");
+        //Generate the ID automatically
+        //String.formate ensure it looks like D001,D002.....
+        System.out.println("How many doctors you want to register ?");
+        int numberOfDoctors = ScannerHelper.readInt("Enter Number of Doctors : ");
+        for(int i=0;i<numberOfDoctors;i++)
+        {
+            String  generatedID = String.format("D%04d", idCounter++);
+            //Get Doctor Details
+            String name = ScannerHelper.readString("Enter Name : ");
+            String specification = ScannerHelper.readString("Enter Specification : ");
+            int experience = ScannerHelper.readInt("Enter Experience : ");
+            String shift= ScannerHelper.readString("Enter Shift : ");
+            Doctor doctor = new Doctor(generatedID,name,specification,experience,shift);
+            doctorsDetails.add(doctor);
 
-        doctorName1 = ScannerHelper.readString("Name : ");
-        specialization1 = ScannerHelper.readString("Specialization : ");
-        experience1 = ScannerHelper.readInt("Experience : ");
-        shift1 = ScannerHelper.readString("Shift : ");
+            System.out.println("\nDoctor Registered Successfully. Doctor ID:"+generatedID);
+        }
 
-        System.out.println("\nEnter Doctor 2 Details");
-
-        doctorName2 = ScannerHelper.readString("Name : ");
-        specialization2 = ScannerHelper.readString("Specialization : ");
-        experience2 = ScannerHelper.readInt("Experience : ");
-        shift2 = ScannerHelper.readString("Shift : ");
-
-        System.out.println("\nEnter Doctor 3 Details");
-
-        doctorName3 = ScannerHelper.readString("Name : ");
-        specialization3 = ScannerHelper.readString("Specialization : ");
-        experience3 = ScannerHelper.readInt("Experience : ");
-        shift3 = ScannerHelper.readString("Shift : ");
-
-        System.out.println("\nDoctors Registered Successfully.");
 
     }
     private static void bulkEntry()
@@ -83,34 +68,9 @@ public class AdminMenu {
     private static void doctorsList()
     {
         System.out.println("\n=========== DOCTOR LIST ===========");
+        System.out.println("Total Doctor List: "+doctorsDetails.size());
+       doctorsDetails.forEach(doctor -> System.out.println(doctor));
 
-        if (doctorName1 == null) {
-            System.out.println("No Doctors Registered.");
-            return;
-        }
-
-        System.out.println("--------------------------------");
-        System.out.println("Doctor 1");
-        System.out.println("Name           : " + doctorName1);
-        System.out.println("Specialization : " + specialization1);
-        System.out.println("Experience     : " + experience1);
-        System.out.println("Shift          : " + shift1);
-
-        System.out.println("--------------------------------");
-        System.out.println("Doctor 2");
-        System.out.println("Name           : " + doctorName2);
-        System.out.println("Specialization : " + specialization2);
-        System.out.println("Experience     : " + experience2);
-        System.out.println("Shift          : " + shift2);
-
-        System.out.println("--------------------------------");
-        System.out.println("Doctor 3");
-        System.out.println("Name           : " + doctorName3);
-        System.out.println("Specialization : " + specialization3);
-        System.out.println("Experience     : " + experience3);
-        System.out.println("Shift          : " + shift3);
-
-        System.out.println("--------------------------------");
 
     }
 
