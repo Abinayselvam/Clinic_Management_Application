@@ -1,5 +1,7 @@
 package org.examples.helper;
 
+import org.examples.model.Patient;
+
 import java.util.Scanner;
 
 public class ScannerHelper {
@@ -74,4 +76,5 @@ public class ScannerHelper {
             }
         }
     }
+
 }
