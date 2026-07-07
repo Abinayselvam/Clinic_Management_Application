@@ -2,14 +2,19 @@ package org.examples.operations;
 
 import org.examples.enums.Gender;
 import org.examples.helper.ScannerHelper;
+import org.examples.model.Appointment;
+import org.examples.model.Doctor;
 import org.examples.model.Patient;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 
 public class FrontDeskMenu {
     private static Scanner scanner = new Scanner(System.in);
     private static ArrayList<Patient> patients = new ArrayList<>();
+    private static List<Appointment> appointmentList = new ArrayList<>();
     private static int idConter = 1;
 
     public static void show() {
@@ -77,7 +82,54 @@ public class FrontDeskMenu {
 
     private static void bookAppointment() {
         System.out.println("Welcome to Book Appointment Management System");
+        //1)Identify patient registered
+        String phone = ScannerHelper.readMobileNumber(scanner, "Enter Mobile Number : ");
+        Patient patient = findByMobileNumber(phone);
+        if(patient==null)
+        {
+            System.out.println("Patient Not Registered.");
+            registerPatient();
+            return;
+        }
+        String slot = ScannerHelper.readAppointmentSlot(scanner);
 
+        List<Doctor> doctors = AdminMenu.getDoctorList();
+
+        List<Doctor> availableDoctors = new ArrayList<>();
+
+        for(Doctor doctor : doctors)
+        {
+            if(doctor.isSlotAvailable(slot))
+            {
+                availableDoctors.add(doctor);
+            }
+        }
+
+        if(availableDoctors.isEmpty())
+        {
+            System.out.println("No Doctors Available.");
+            return;
+        }
+
+        Random random = new Random();
+
+        Doctor assignedDoctor =
+                availableDoctors.get(
+                        random.nextInt(availableDoctors.size())
+                );
+
+        assignedDoctor.bookSlot(slot);
+
+        Appointment appointment =
+                new Appointment(assignedDoctor,patient,slot);
+
+        appointmentList.add(appointment);
+
+        System.out.println();
+
+        System.out.println("Appointment Booked Successfully.");
+
+        System.out.println(appointment);
     }
 
     private static Patient findByMobileNumber(String mobileNumber) {
@@ -86,7 +138,6 @@ public class FrontDeskMenu {
                 return p;
             }
         }
-
         return null;
     }
 }

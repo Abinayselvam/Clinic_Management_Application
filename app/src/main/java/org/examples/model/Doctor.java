@@ -3,11 +3,15 @@ package org.examples.model;
 import org.examples.enums.Shift;
 import org.examples.enums.Specialization;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Doctor {
+    private List<String> bookedSlots= new ArrayList<>(); //Trace Busy Times
 
     private String id;
     private String name;
-   private Specialization specification;
+    private Specialization specification;
     private int experience;
     private Shift shift;
 
@@ -23,6 +27,10 @@ public class Doctor {
         this.experience = experience;
         this.shift = shift;
     }
+    public String getName()
+    {
+        return name;
+    }
 
     @Override
     public String toString() {
@@ -35,5 +43,13 @@ public class Doctor {
                 experience,
                 shift
         );
+    }
+    public boolean isSlotAvailable(String slot)
+    {
+        return !bookedSlots.contains(slot);
+    }
+    public void bookSlot(String slot)
+    {
+        bookedSlots.add(slot);
     }
 }

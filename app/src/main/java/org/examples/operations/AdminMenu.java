@@ -6,9 +6,10 @@ import org.examples.enums.Specialization;
 import org.examples.helper.ScannerHelper;
 import org.examples.model.Doctor;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdminMenu {
-   private static ArrayList<Doctor> doctorsDetails = new ArrayList<>();
+     private static List<Doctor> doctorsDetails = new ArrayList<>();
    //counter to track the serious id
     private static int idCounter =1;
     public static void show()
@@ -85,7 +86,10 @@ public class AdminMenu {
         System.out.println("Total Doctor List: "+doctorsDetails.size());
        doctorsDetails.forEach(doctor -> System.out.println(doctor));
 
-
+    }
+    public static List<Doctor> getDoctorList()
+    {
+        return doctorsDetails;
     }
 
 }
