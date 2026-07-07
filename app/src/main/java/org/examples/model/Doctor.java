@@ -52,4 +52,27 @@ public class Doctor {
     {
         bookedSlots.add(slot);
     }
+    public Specialization getSpecialization()
+    {
+        return specification;
+    }
+    public boolean isShiftAvailable(String slot) {
+
+        if (shift == Shift.BOTH)
+            return true;
+
+        if (shift == Shift.MORNING)
+            return slot.startsWith("09")
+                    || slot.startsWith("10")
+                    || slot.startsWith("11")
+                    || slot.startsWith("12");
+
+        if (shift == Shift.NIGHT)
+            return slot.startsWith("04")
+                    || slot.startsWith("05")
+                    || slot.startsWith("06")
+                    || slot.startsWith("07");
+
+        return false;
+    }
 }
