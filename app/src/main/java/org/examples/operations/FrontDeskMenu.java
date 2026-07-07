@@ -109,6 +109,7 @@ public class FrontDeskMenu {
                                 doctor.getSpecialization() == specialization)
                         .filter(doctor ->
                                 doctor.isSlotAvailable(slot))
+                        //uc11 filter check
                         .filter(doctor ->
                                 doctor.isShiftAvailable(slot))
                         .toList();

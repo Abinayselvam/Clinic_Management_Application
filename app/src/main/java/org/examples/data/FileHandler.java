@@ -3,7 +3,6 @@ package org.examples.data;
 import org.examples.enums.Shift;
 import org.examples.enums.Specialization;
 import org.examples.model.Doctor;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
