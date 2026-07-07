@@ -87,12 +87,11 @@ public class AdminMenu {
                     "Invalid Doctor Record Found",
                     "ERROR");
         }
-
-
     }
     private static void viewAuditLogs()
     {
         System.out.println("Welcome to View Audit Logs");
+        //UC12
         if(AuditLogger.getLogs().isEmpty())
         {
            System.out.println("No audit logs found.");

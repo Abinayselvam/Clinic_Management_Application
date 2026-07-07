@@ -71,6 +71,7 @@ public class FrontDeskMenu {
            int age = ScannerHelper.readInt("Age: ");
            patients.add(new Patient(id, name, gender, age, phone));
             System.out.println("Patient " + id + " registered");
+            //uc13
         AuditLogger.log(
                 "Patient Registered : " + existingPatient.getName(),
                 "INFO");
