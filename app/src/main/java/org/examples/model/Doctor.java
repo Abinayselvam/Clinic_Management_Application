@@ -56,6 +56,7 @@ public class Doctor {
     {
         return specification;
     }
+    //uc11
     public boolean isShiftAvailable(String slot) {
 
         if (shift == Shift.BOTH)
