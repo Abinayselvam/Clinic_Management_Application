@@ -1,6 +1,7 @@
 package org.examples.operations;
 
 import org.examples.enums.Gender;
+import org.examples.enums.Specialization;
 import org.examples.helper.ScannerHelper;
 import org.examples.model.Appointment;
 import org.examples.model.Doctor;
@@ -91,20 +92,26 @@ public class FrontDeskMenu {
             registerPatient();
             return;
         }
-        String slot = ScannerHelper.readAppointmentSlot(scanner);
 
         List<Doctor> doctors = AdminMenu.getDoctorList();
 
-        List<Doctor> availableDoctors = new ArrayList<>();
+        Specialization specialization =
+                ScannerHelper.readEnumChoice(
 
-        for(Doctor doctor : doctors)
-        {
-            if(doctor.isSlotAvailable(slot))
-            {
-                availableDoctors.add(doctor);
-            }
-        }
+                        "Select Required Specialization",Specialization.values()
+                );
+        String slot = ScannerHelper.readAppointmentSlot(scanner);
 
+        List<Doctor> availableDoctors =
+                AdminMenu.getDoctorList()
+                        .stream()
+                        .filter(doctor ->
+                                doctor.getSpecialization() == specialization)
+                        .filter(doctor ->
+                                doctor.isSlotAvailable(slot))
+                        .filter(doctor ->
+                                doctor.isShiftAvailable(slot))
+                        .toList();
         if(availableDoctors.isEmpty())
         {
             System.out.println("No Doctors Available.");
