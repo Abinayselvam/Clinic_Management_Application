@@ -3,7 +3,9 @@ package org.examples.operations;
 import org.examples.data.FileHandler;
 import org.examples.enums.Shift;
 import org.examples.enums.Specialization;
+import org.examples.helper.AuditLogger;
 import org.examples.helper.ScannerHelper;
+import org.examples.model.AuditLog;
 import org.examples.model.Doctor;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,9 @@ public class AdminMenu {
                     case 5:System.out.println("Shutting down admin clinic...goodbye"); exitSystem = true; break;
                     default:
                         System.out.println("Invalid choice");
+                        AuditLogger.log(
+                                "Invalid Menu Option Selected",
+                                "WARNING");
 
                 }
 
@@ -52,6 +57,9 @@ public class AdminMenu {
             Shift shift= ScannerHelper.readEnumChoice( "Enter Shift : ",Shift.values());
             Doctor doctor = new Doctor(generatedID,name,specialization,experience,shift);
             doctorsDetails.add(doctor);
+            AuditLogger.log(
+                    "Doctor Registered : " + doctor.getId(),
+                    "INFO");
 
             System.out.println("\nDoctor Registered Successfully. Doctor ID:"+generatedID);
         }
@@ -70,8 +78,14 @@ public class AdminMenu {
             idCounter += importedDoctors.size();
             System.out.println(importedDoctors.size()
                     + " Doctors Imported Successfully.");
+            AuditLogger.log(
+                    idCounter + " Doctors Imported",
+                    "INFO");
         }else{
             System.out.println("Upload failed or file was empty.");
+            AuditLogger.log(
+                    "Invalid Doctor Record Found",
+                    "ERROR");
         }
 
 
@@ -79,6 +93,14 @@ public class AdminMenu {
     private static void viewAuditLogs()
     {
         System.out.println("Welcome to View Audit Logs");
+        if(AuditLogger.getLogs().isEmpty())
+        {
+           System.out.println("No audit logs found.");
+        }
+        for(AuditLog auditLog : AuditLogger.getLogs())
+        {
+            System.out.println(auditLog);
+        }
     }
     private static void doctorsList()
     {
