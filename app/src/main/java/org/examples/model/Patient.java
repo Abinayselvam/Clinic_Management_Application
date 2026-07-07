@@ -16,6 +16,9 @@ public class Patient {
         this.age = age;
         this.phone = phone;
     }
+    public String getId() {
+        return id;
+    }
     public String toString(){
         return String.format("ID:%s | Name:%-15s | gender:%-6s | age:%d | phone:%s", id, name, gender, age, phone);
     }
