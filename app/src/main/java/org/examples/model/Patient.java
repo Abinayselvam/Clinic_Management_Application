@@ -19,4 +19,10 @@ public class Patient {
     public String toString(){
         return String.format("ID:%s | Name:%-15s | gender:%-6s | age:%d | phone:%s", id, name, gender, age, phone);
     }
+    public String getName() {
+        return name;
+    }
+    public String getPhone(){
+        return phone;
+    }
 }
