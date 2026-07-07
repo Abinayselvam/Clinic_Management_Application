@@ -2,6 +2,7 @@ package org.examples.operations;
 
 import org.examples.enums.Gender;
 import org.examples.enums.Specialization;
+import org.examples.helper.AuditLogger;
 import org.examples.helper.ScannerHelper;
 import org.examples.model.Appointment;
 import org.examples.model.Doctor;
@@ -40,6 +41,9 @@ public class FrontDeskMenu {
                     break;
                 default:
                     System.out.println("Invalid choice");
+                    AuditLogger.log(
+                            "Invalid Menu Option Selected",
+                            "WARNING");
             }
         }
 
@@ -67,6 +71,9 @@ public class FrontDeskMenu {
            int age = ScannerHelper.readInt("Age: ");
            patients.add(new Patient(id, name, gender, age, phone));
             System.out.println("Patient " + id + " registered");
+        AuditLogger.log(
+                "Patient Registered : " + existingPatient.getName(),
+                "INFO");
         }
 
     private static void viewPatientDetails() {
@@ -136,7 +143,14 @@ public class FrontDeskMenu {
         System.out.println();
 
         System.out.println("Appointment Booked Successfully.");
-
+        AuditLogger.log(
+                "Appointment Booked for "
+                        + patient.getName()
+                        + " with "
+                        + assignedDoctor.getName()
+                        + " at "
+                        + slot,
+                "INFO");
         System.out.println(appointment);
     }
 

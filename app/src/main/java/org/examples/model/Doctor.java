@@ -27,6 +27,9 @@ public class Doctor {
         this.experience = experience;
         this.shift = shift;
     }
+    public String getId() {
+        return id;
+    }
     public String getName()
     {
         return name;

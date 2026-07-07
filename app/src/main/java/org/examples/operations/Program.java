@@ -1,5 +1,6 @@
 package org.examples.operations;
 
+import org.examples.helper.AuditLogger;
 import org.examples.helper.ScannerHelper;
 
 import java.util.Scanner;
@@ -30,6 +31,9 @@ public class Program {
                     break;
                 default:
                     System.out.println("Invalid choice");
+                    AuditLogger.log(
+                            "Invalid Menu Option Selected",
+                            "WARNING");
 
             }
         }
