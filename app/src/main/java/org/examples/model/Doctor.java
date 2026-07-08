@@ -34,6 +34,10 @@ public class Doctor {
     {
         return name;
     }
+    public int getExperience()
+    {
+        return experience;
+    }
 
     @Override
     public String toString() {

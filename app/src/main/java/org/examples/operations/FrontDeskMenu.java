@@ -61,6 +61,9 @@ public class FrontDeskMenu {
         if (existingPatient != null) {
 
             System.out.println("\nPatient Already Registered.");
+            AuditLogger.log(
+                    "Patient Already Registered.",
+                    "WARNING");
             System.out.println(existingPatient);
             System.out.println("Welcome back " + existingPatient.getName());
             return;
@@ -81,6 +84,9 @@ public class FrontDeskMenu {
         System.out.println("Welcome to View Patient Management System");
         if (patients.isEmpty()) {
             System.out.println("There is no patient to view");
+            AuditLogger.log(
+                    "There is no patient to view",
+                    "WARNING");
         } else {
             for (Patient p :patients) {
                 System.out.println(p);
@@ -97,6 +103,9 @@ public class FrontDeskMenu {
         if(patient==null)
         {
             System.out.println("Patient Not Registered.");
+            AuditLogger.log(
+                    "No Patient Registered " ,
+                    "ERROR");
             registerPatient();
             return;
         }
@@ -124,6 +133,10 @@ public class FrontDeskMenu {
         if(availableDoctors.isEmpty())
         {
             System.out.println("No Doctors Available.");
+            AuditLogger.log(
+                    "No Doctors Available" ,
+                    "ERROR");
+
             return;
         }
 
