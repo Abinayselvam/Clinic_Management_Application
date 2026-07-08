@@ -3,8 +3,6 @@ package org.examples.operations;
 import org.examples.helper.AuditLogger;
 import org.examples.helper.ScannerHelper;
 
-import java.util.Scanner;
-
 public class Program {
     private static final int ROLE_ADMIN = 1;
     private static final int ROLE_FRONTDESK = 2;

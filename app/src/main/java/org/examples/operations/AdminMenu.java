@@ -35,7 +35,6 @@ public class AdminMenu {
                         AuditLogger.log(
                                 "Invalid Menu Option Selected",
                                 "WARNING");
-
                 }
 
             }
@@ -49,12 +48,26 @@ public class AdminMenu {
         int numberOfDoctors = ScannerHelper.readInt("Enter Number of Doctors : ");
         for(int i=0;i<numberOfDoctors;i++)
         {
-            String  generatedID = String.format("D%04d", idCounter++);
+
             //Get Doctor Details
             String name = ScannerHelper.readString("Enter Name : ");
             Specialization specialization = ScannerHelper.readEnumChoice("Select Specialization",Specialization.values());
             int experience = ScannerHelper.readInt("Enter Experience : ");
             Shift shift= ScannerHelper.readEnumChoice( "Enter Shift : ",Shift.values());
+            for (Doctor doctor : doctorsDetails) {
+
+                if (doctor.getName().equalsIgnoreCase(name)
+                        && doctor.getSpecialization() == specialization
+                        && doctor.getExperience() == experience) {
+
+                    System.out.println("Doctor already exists.");
+                    AuditLogger.log(
+                            "Doctor already exists.",
+                            "WARNING");
+                    return;
+                }
+            }
+            String  generatedID = String.format("D%04d", idCounter++);
             Doctor doctor = new Doctor(generatedID,name,specialization,experience,shift);
             doctorsDetails.add(doctor);
             AuditLogger.log(
@@ -63,23 +76,19 @@ public class AdminMenu {
 
             System.out.println("\nDoctor Registered Successfully. Doctor ID:"+generatedID);
         }
-
-
     }
     private static void bulkEntry()
     {
         System.out.println("Welcome to Bulk Entry");
         String filename = ScannerHelper.readString("Enter Filename : ");
-        ArrayList<Doctor> importedDoctors =
-                FileHandler.bulkLoadDoctors(filename, doctorsDetails.size());
+        ArrayList<Doctor> importedDoctors = FileHandler.bulkLoadDoctors(filename, doctorsDetails.size());
         if(!importedDoctors.isEmpty())
         {
             doctorsDetails.addAll(importedDoctors);
-            idCounter += importedDoctors.size();
             System.out.println(importedDoctors.size()
                     + " Doctors Imported Successfully.");
             AuditLogger.log(
-                    idCounter + " Doctors Imported",
+                    importedDoctors.size() + " Doctors Imported",
                     "INFO");
         }else{
             System.out.println("Upload failed or file was empty.");
@@ -104,7 +113,15 @@ public class AdminMenu {
     private static void doctorsList()
     {
         System.out.println("\n=========== DOCTOR LIST ===========");
+        if(doctorsDetails.isEmpty())
+        {
+            System.out.println("No doctors found.");
+            AuditLogger.log(
+                    "No Doctors Found",
+                    "ERROR");
+        }
         System.out.println("Total Doctor List: "+doctorsDetails.size());
+
        doctorsDetails.forEach(doctor -> System.out.println(doctor));
 
     }

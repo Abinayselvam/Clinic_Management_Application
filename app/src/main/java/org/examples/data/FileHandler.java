@@ -11,7 +11,7 @@ public class FileHandler {
     public static ArrayList<Doctor> bulkLoadDoctors(String filename, int startId)
     {
         ArrayList<Doctor> newDoctors = new ArrayList<>();
-        int currentId = startId;
+        int currentId = startId+1;
         try(BufferedReader br = new BufferedReader(new FileReader(filename)))
         {
           String line;
