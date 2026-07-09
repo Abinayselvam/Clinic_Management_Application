@@ -1,0 +1,8 @@
+2026-07-09 09:59:20 AM | INFO  | Doctor Registered : D0001
+2026-07-09 09:59:45 AM | INFO  | Doctor Registered : D0002
+2026-07-09 10:00:29 AM | INFO  | Doctor Registered : 3
+2026-07-09 10:01:09 AM | WARN  | There is no patient to view
+2026-07-09 10:01:33 AM | WARN  | No Patient Registered 
+2026-07-09 10:01:55 AM | INFO  | Patient Registered : P0001
+2026-07-09 10:02:12 AM | WARN  | Patient Already Registered.
+2026-07-09 10:02:39 AM | INFO  | Patient Registered : P0002

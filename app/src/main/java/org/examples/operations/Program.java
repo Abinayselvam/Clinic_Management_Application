@@ -1,12 +1,13 @@
 package org.examples.operations;
-
-import org.examples.helper.AuditLogger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.examples.helper.ScannerHelper;
 
 public class Program {
     private static final int ROLE_ADMIN = 1;
     private static final int ROLE_FRONTDESK = 2;
     private static final int EXIT = 3;
+    public static final Logger logger = LogManager.getLogger(Program.class);
     public static void startup() {
         boolean exitSystem = false;
         System.out.println("Welcome to the Clinic Management Application");
@@ -29,10 +30,8 @@ public class Program {
                     break;
                 default:
                     System.out.println("Invalid choice");
-                    AuditLogger.log(
-                            "Invalid Menu Option Selected",
-                            "WARNING");
-
+                    logger.warn(
+                            "Invalid Menu Option Selected");
             }
         }
     }

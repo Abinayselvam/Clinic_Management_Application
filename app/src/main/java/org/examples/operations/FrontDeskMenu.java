@@ -2,7 +2,6 @@ package org.examples.operations;
 
 import org.examples.enums.Gender;
 import org.examples.enums.Specialization;
-import org.examples.helper.AuditLogger;
 import org.examples.helper.ScannerHelper;
 import org.examples.model.Appointment;
 import org.examples.model.Doctor;
@@ -40,10 +39,8 @@ public class FrontDeskMenu {
                     exitSystem = true;
                     break;
                 default:
-                    System.out.println("Invalid choice");
-                    AuditLogger.log(
-                            "Invalid Menu Option Selected",
-                            "WARNING");
+                    Program.logger.warn(
+                            "Invalid Menu Option Selected");
             }
         }
 
@@ -59,11 +56,8 @@ public class FrontDeskMenu {
         Patient existingPatient = findByMobileNumber(phone);
 
         if (existingPatient != null) {
-
-            System.out.println("\nPatient Already Registered.");
-            AuditLogger.log(
-                    "Patient Already Registered.",
-                    "WARNING");
+           Program.logger.warn(
+                    "Patient Already Registered.");
             System.out.println(existingPatient);
             System.out.println("Welcome back " + existingPatient.getName());
             return;
@@ -73,20 +67,17 @@ public class FrontDeskMenu {
            Gender gender = ScannerHelper.readEnumChoice("Gender: ", Gender.values());
            int age = ScannerHelper.readInt("Age: ");
            patients.add(new Patient(id, name, gender, age, phone));
-            System.out.println("Patient " + id + " registered");
+
             //uc13
-        AuditLogger.log(
-                "Patient Registered : " + existingPatient.getName(),
-                "INFO");
+       Program.logger.info(
+                "Patient Registered : " +id);
         }
 
     private static void viewPatientDetails() {
         System.out.println("Welcome to View Patient Management System");
         if (patients.isEmpty()) {
-            System.out.println("There is no patient to view");
-            AuditLogger.log(
-                    "There is no patient to view",
-                    "WARNING");
+            Program.logger.warn(
+                    "There is no patient to view");
         } else {
             for (Patient p :patients) {
                 System.out.println(p);
@@ -102,10 +93,8 @@ public class FrontDeskMenu {
         Patient patient = findByMobileNumber(phone);
         if(patient==null)
         {
-            System.out.println("Patient Not Registered.");
-            AuditLogger.log(
-                    "No Patient Registered " ,
-                    "ERROR");
+            Program.logger.warn(
+                    "No Patient Registered " );
             registerPatient();
             return;
         }
@@ -132,11 +121,7 @@ public class FrontDeskMenu {
                         .toList();
         if(availableDoctors.isEmpty())
         {
-            System.out.println("No Doctors Available.");
-            AuditLogger.log(
-                    "No Doctors Available" ,
-                    "ERROR");
-
+         Program.logger.warn("No Doctors Available");
             return;
         }
 
@@ -157,7 +142,7 @@ public class FrontDeskMenu {
         System.out.println();
 
         System.out.println("Appointment Booked Successfully.");
-        AuditLogger.log(
+       Program.logger.info(
                 "Appointment Booked for "
                         + patient.getName()
                         + " with "

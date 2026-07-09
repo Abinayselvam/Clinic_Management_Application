@@ -3,17 +3,22 @@ package org.examples.operations;
 import org.examples.data.FileHandler;
 import org.examples.enums.Shift;
 import org.examples.enums.Specialization;
-import org.examples.helper.AuditLogger;
 import org.examples.helper.ScannerHelper;
-import org.examples.model.AuditLog;
 import org.examples.model.Doctor;
+
+import java.io.IOException;
+import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
+
 
 public class AdminMenu {
      private static List<Doctor> doctorsDetails = new ArrayList<>();
    //counter to track the serious id
     private static int idCounter =1;
+    private static final String LOG_FILE =
+            "C:\\Users\\Abinaya S\\OneDrive\\Desktop\\JAVA\\Clinic_Management_Application\\applogs\\application_logs.log";
     public static void show()
     {
 
@@ -32,9 +37,8 @@ public class AdminMenu {
                     case 5:System.out.println("Shutting down admin clinic...goodbye"); exitSystem = true; break;
                     default:
                         System.out.println("Invalid choice");
-                        AuditLogger.log(
-                                "Invalid Menu Option Selected",
-                                "WARNING");
+                        Program.logger.warn(
+                                "Invalid Menu Option Selected");
                 }
 
             }
@@ -53,28 +57,28 @@ public class AdminMenu {
             String name = ScannerHelper.readString("Enter Name : ");
             Specialization specialization = ScannerHelper.readEnumChoice("Select Specialization",Specialization.values());
             int experience = ScannerHelper.readInt("Enter Experience : ");
-            Shift shift= ScannerHelper.readEnumChoice( "Enter Shift : ",Shift.values());
-            for (Doctor doctor : doctorsDetails) {
+            Shift shift= ScannerHelper.readEnumChoice( "Select Shift ",Shift.values());
+            boolean duplicate = false;
 
+            for (Doctor doctor : doctorsDetails) {
                 if (doctor.getName().equalsIgnoreCase(name)
                         && doctor.getSpecialization() == specialization
                         && doctor.getExperience() == experience) {
 
-                    System.out.println("Doctor already exists.");
-                    AuditLogger.log(
-                            "Doctor already exists.",
-                            "WARNING");
-                    return;
+                    Program.logger.warn("Doctor already exists.");
+                    duplicate = true;
+                    break;
                 }
+            }
+
+            if (duplicate) {
+                continue;   // Skip only this doctor, continue with the next one
             }
             String  generatedID = String.format("D%04d", idCounter++);
             Doctor doctor = new Doctor(generatedID,name,specialization,experience,shift);
             doctorsDetails.add(doctor);
-            AuditLogger.log(
-                    "Doctor Registered : " + doctor.getId(),
-                    "INFO");
-
-            System.out.println("\nDoctor Registered Successfully. Doctor ID:"+generatedID);
+            Program.logger.info(
+                    "Doctor Registered : " + doctor.getId());
         }
     }
     private static void bulkEntry()
@@ -85,40 +89,45 @@ public class AdminMenu {
         if(!importedDoctors.isEmpty())
         {
             doctorsDetails.addAll(importedDoctors);
-            System.out.println(importedDoctors.size()
-                    + " Doctors Imported Successfully.");
-            AuditLogger.log(
-                    importedDoctors.size() + " Doctors Imported",
-                    "INFO");
+
+            Program.logger.info(
+                    "Doctor Registered : {}",
+                    importedDoctors.size());
         }else{
-            System.out.println("Upload failed or file was empty.");
-            AuditLogger.log(
-                    "Invalid Doctor Record Found",
-                    "ERROR");
+            Program.logger.error(
+                    "Upload failed or file was empty.");
         }
     }
-    private static void viewAuditLogs()
-    {
-        System.out.println("Welcome to View Audit Logs");
-        //UC12
-        if(AuditLogger.getLogs().isEmpty())
-        {
-           System.out.println("No audit logs found.");
+    private static void viewAuditLogs() {
+
+        System.out.println("========= AUDIT LOGS =========");
+
+        Path path = Paths.get(
+                LOG_FILE);
+
+        if (!Files.exists(path)) {
+            System.out.println("No Audit Logs Found.");
+            return;
         }
-        for(AuditLog auditLog : AuditLogger.getLogs())
-        {
-            System.out.println(auditLog);
+
+        try (Stream<String> logs = Files.lines(path)) {
+
+            logs.forEach(System.out::println);
+
+        } catch (IOException e) {
+
+            System.out.println("Unable to read log file.");
         }
+
+        System.out.println("==============================");
     }
     private static void doctorsList()
     {
         System.out.println("\n=========== DOCTOR LIST ===========");
         if(doctorsDetails.isEmpty())
         {
-            System.out.println("No doctors found.");
-            AuditLogger.log(
-                    "No Doctors Found",
-                    "ERROR");
+            Program.logger.warn(
+                    "No Doctors Found");
         }
         System.out.println("Total Doctor List: "+doctorsDetails.size());
 
