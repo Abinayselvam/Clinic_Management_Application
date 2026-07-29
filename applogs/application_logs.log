@@ -6,3 +6,94 @@
 2026-07-09 10:01:55 AM | INFO  | Patient Registered : P0001
 2026-07-09 10:02:12 AM | WARN  | Patient Already Registered.
 2026-07-09 10:02:39 AM | INFO  | Patient Registered : P0002
+2026-07-09 12:10:31 PM | INFO  | Doctor Registered : D0001
+2026-07-09 12:12:20 PM | INFO  | Doctor Registered : D0001
+2026-07-09 12:13:29 PM | INFO  | Doctor Registered : D0001
+2026-07-09 12:16:13 PM | INFO  | Doctor Registered : D0001
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0002
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0003
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0004
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0005
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0006
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0003
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0006
+2026-07-10 10:34:34 AM | INFO  | Doctor Registered : D0007
+2026-07-10 10:34:53 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0007
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:48:39 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:48:39 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:48:39 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:48:39 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:49:05 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:49:05 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:49:05 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0008
+2026-07-15 03:29:27 PM | INFO  | Patient Registered : D0001
+2026-07-15 03:29:53 PM | INFO  | Doctor Registered : D0002
+2026-07-15 03:29:53 PM | INFO  | Doctor Registered : D0005
+2026-07-15 03:29:53 PM | INFO  | Doctor Registered : D0008
+2026-07-15 03:30:48 PM | INFO  | Doctor Registered : D0002
+2026-07-15 03:30:48 PM | INFO  | Doctor Registered : D0005
+2026-07-15 03:30:48 PM | INFO  | Doctor Registered : D0008
+2026-07-15 03:30:48 PM | INFO  | Appointment Booked for user1 with Nandhini at 11:00 AM
+2026-07-15 03:31:30 PM | WARN  | No Patient Registered 
+2026-07-15 03:31:44 PM | INFO  | Patient Registered : D0002
+2026-07-15 03:31:51 PM | INFO  | Doctor Registered : D0002
+2026-07-15 03:31:51 PM | INFO  | Doctor Registered : D0005
+2026-07-15 03:31:51 PM | INFO  | Doctor Registered : D0008
+2026-07-15 03:31:56 PM | INFO  | Doctor Registered : D0002
+2026-07-15 03:31:56 PM | INFO  | Doctor Registered : D0005
+2026-07-15 03:31:56 PM | INFO  | Doctor Registered : D0008
+2026-07-15 03:31:56 PM | INFO  | Appointment Booked for user2 with Nandhini at 11:00 AM
+2026-07-15 05:12:28 PM | INFO  | Patient Registered : D0001
+2026-07-15 05:27:46 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:27:46 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:27:46 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:27:55 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:27:55 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:27:55 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:27:55 PM | INFO  | Appointment Booked for user1 with Nandhini at 09:30 AM
+2026-07-15 05:30:42 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:30:47 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:30:51 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:32:07 PM | INFO  | Appointment Booked for user1 with Nandhini at 10:00 AM
+2026-07-15 05:34:32 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:34:32 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:34:32 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:34:32 PM | INFO  | Appointment Booked for user1 with Nandhini at 09:30 AM
+2026-07-15 05:38:08 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:38:08 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:38:08 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:38:08 PM | INFO  | Appointment Booked for user1 with Nandhini at 09:30 AM
+2026-07-15 05:42:03 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:42:03 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:42:03 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:42:03 PM | INFO  | Appointment Booked for user1 with Nandhini at 09:30 AM
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0002
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0005
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0008
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0002
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0005
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0008
+2026-07-29 11:52:28 AM | INFO  | Doctor Registered : D0010
+2026-07-29 12:01:23 PM | INFO  | Doctor Registered : D0011
