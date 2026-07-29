@@ -7,4 +7,5 @@ public enum Specialization {
     ENDOCRINOLOGIST,
     CHILD_SPECIALIST,
     GYNAECOLOGIST,
+    NEUROLOGIST
 }

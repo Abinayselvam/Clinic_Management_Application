@@ -4,21 +4,23 @@ import org.examples.data.FileHandler;
 import org.examples.enums.Shift;
 import org.examples.enums.Specialization;
 import org.examples.helper.ScannerHelper;
+import org.examples.model.AuditLog;
 import org.examples.model.Doctor;
-
-import java.io.IOException;
+import org.examples.repository.AuditLogRepository;
+import org.examples.repository.DoctorRepository;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
-
 
 public class AdminMenu {
      private static List<Doctor> doctorsDetails = new ArrayList<>();
-   //counter to track the serious id
-    private static int idCounter =1;
     private static final String LOG_FILE =
             "C:\\Users\\Abinaya S\\OneDrive\\Desktop\\JAVA\\Clinic_Management_Application\\applogs\\application_logs.log";
+    private static DoctorRepository repository = new DoctorRepository();
+    public AdminMenu(DoctorRepository doctorRepository)
+    {
+      repository = doctorRepository;
+    }
     public static void show()
     {
 
@@ -26,59 +28,77 @@ public class AdminMenu {
         while(!exitSystem)
             {
                 System.out.println("----WELCOME TO CLINIC ADMIN MENU----\n");
-                System.out.println("Select persona 1.Doctor's Entry 2.Bulk Entry(csv) 3.View Audit Logs 4.Show Doctor's List 5.Exit\n");
+                System.out.println("Select persona 1.Doctor's Entry 2.Update Doctor 3.Delete Doctor Data 4.Bulk Entry(csv) 5.View Audit Logs 6.Show Doctor's  List 7.Exit\n");
                 int choice = ScannerHelper.readInt("Enter Choice : ");
                 switch(choice)
                 {
                     case 1: doctorEntry(); break;
-                    case 2: bulkEntry(); break;
-                    case 3: viewAuditLogs(); break;
-                    case 4: doctorsList(); break;
-                    case 5:System.out.println("Shutting down admin clinic...goodbye"); exitSystem = true; break;
+                    case 2: updateDoctor(); break;
+                    case 3: String id = ScannerHelper.readString("Enter Doctor's ID : ");
+                            repository.delete(id); break;
+                    case 4: bulkEntry(); break;
+                    case 5: viewAuditLogs(); break;
+                    case 6: doctorsList(); break;
+                    case 7: System.out.println("Shutting down admin clinic...goodbye"); exitSystem = true; break;
                     default:
                         System.out.println("Invalid choice");
                         Program.logger.warn(
                                 "Invalid Menu Option Selected");
                 }
-
             }
     }
-    private static void doctorEntry()
-    {
+    private static void doctorEntry() {
+
         System.out.println("Register the New Doctor Entry");
-        //Generate the ID automatically
-        //String.formate ensure it looks like D001,D002.....
-        System.out.println("How many doctors you want to register ?");
-        int numberOfDoctors = ScannerHelper.readInt("Enter Number of Doctors : ");
-        for(int i=0;i<numberOfDoctors;i++)
-        {
 
-            //Get Doctor Details
+        int count = ScannerHelper.readInt("Enter Number of Doctors : ");
+
+        List<Doctor> doctorList = repository.findAll();
+
+        for (int i = 0; i < count; i++) {
+
             String name = ScannerHelper.readString("Enter Name : ");
-            Specialization specialization = ScannerHelper.readEnumChoice("Select Specialization",Specialization.values());
-            int experience = ScannerHelper.readInt("Enter Experience : ");
-            Shift shift= ScannerHelper.readEnumChoice( "Select Shift ",Shift.values());
-            boolean duplicate = false;
 
-            for (Doctor doctor : doctorsDetails) {
-                if (doctor.getName().equalsIgnoreCase(name)
-                        && doctor.getSpecialization() == specialization
-                        && doctor.getExperience() == experience) {
+            Specialization specialization =
+                    ScannerHelper.readEnumChoice(
+                            "Select Specialization",
+                            Specialization.values());
 
-                    Program.logger.warn("Doctor already exists.");
-                    duplicate = true;
-                    break;
-                }
-            }
+            int experience =
+                    ScannerHelper.readInt("Enter Experience : ");
+
+            Shift shift =
+                    ScannerHelper.readEnumChoice(
+                            "Select Shift",
+                            Shift.values());
+
+            boolean duplicate = doctorList.stream()
+                    .anyMatch(d ->
+                            d.getName().equalsIgnoreCase(name)
+                                    && d.getSpecialization() == specialization
+                                    && d.getExperience() == experience);
 
             if (duplicate) {
-                continue;   // Skip only this doctor, continue with the next one
+                System.out.println("Doctor already exists.");
+                continue;
             }
-            String  generatedID = String.format("D%04d", idCounter++);
-            Doctor doctor = new Doctor(generatedID,name,specialization,experience,shift);
-            doctorsDetails.add(doctor);
-            Program.logger.info(
-                    "Doctor Registered : " + doctor.getId());
+
+            String id = repository.generateDoctorId();
+
+            Doctor doctor = new Doctor(
+                    id,
+                    name,
+                    specialization,
+                    experience,
+                    shift);
+
+            repository.save(doctor);
+
+            doctorList.add(doctor);
+
+            Program.logger.info("Doctor Registered : " + id);
+
+            System.out.println("Doctor Registered Successfully.");
         }
     }
     private static void bulkEntry()
@@ -100,43 +120,119 @@ public class AdminMenu {
     }
     private static void viewAuditLogs() {
 
-        System.out.println("========= AUDIT LOGS =========");
+        AuditLogRepository repository =
+                new AuditLogRepository();
 
-        Path path = Paths.get(
-                LOG_FILE);
+        List<AuditLog> logs =
+                repository.findAll();
 
-        if (!Files.exists(path)) {
-            System.out.println("No Audit Logs Found.");
+        if (logs.isEmpty()) {
+
+            System.out.println("No Logs Available");
             return;
         }
 
-        try (Stream<String> logs = Files.lines(path)) {
+        System.out.println("-----------------------------------------------");
 
-            logs.forEach(System.out::println);
-
-        } catch (IOException e) {
-
-            System.out.println("Unable to read log file.");
+        for (AuditLog log : logs) {
+            System.out.println(log);
         }
 
-        System.out.println("==============================");
+        System.out.println("-----------------------------------------------");
     }
     private static void doctorsList()
     {
         System.out.println("\n=========== DOCTOR LIST ===========");
-        if(doctorsDetails.isEmpty())
+        if(repository.findAll().isEmpty())
         {
             Program.logger.warn(
                     "No Doctors Found");
+            return;
         }
-        System.out.println("Total Doctor List: "+doctorsDetails.size());
+        System.out.println("1.All Available Doctors List");
+        System.out.println("2.Specialization Available Doctors List");
+        System.out.println("3.Experience Available Doctors List");
 
-       doctorsDetails.forEach(doctor -> System.out.println(doctor));
 
+            int choice = ScannerHelper.readInt("Enter Choice : ");
+            switch (choice) {
+                case 1:
+                    System.out.println("Total Doctor List: " + repository.findAll().size());
+                    repository.findAll().forEach(doctor -> System.out.println(doctor));
+                    break;
+                case 2:
+                    getSpecificationDoctorList().forEach(doctor -> System.out.println(doctor));
+                    break;
+                case 3:
+                    findByExperience().forEach(doctor -> System.out.println(doctor));
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+            }
     }
     public static List<Doctor> getDoctorList()
     {
-        return doctorsDetails;
+        return repository.findAll();
     }
+    public static List<Doctor> getSpecificationDoctorList()
+    {
+        Specialization specialization = ScannerHelper.readEnumChoice("Select Specialization",Specialization.values());
+         List<Doctor> splDoctor= repository.findBySpecification(specialization);
+         return splDoctor;
+    }
+    private static List<Doctor> findByExperience()
+    {
+        int exp =  ScannerHelper.readInt("Enter Experience : ");
+        return repository.findByExperience(exp);
+    }
+    private static boolean updateDoctor() {
 
+        String id = ScannerHelper.readString("Enter Doctor ID : ");
+
+        Doctor doctor = repository.findById(id);
+
+        if (doctor == null) {
+            System.out.println("No Doctor Found with ID : " + id);
+            Program.logger.warn("Update Failed. Doctor not found : " + id);
+            return false;
+        }
+
+        System.out.println("\nCurrent Doctor Details");
+        System.out.println(doctor);
+
+        String name = ScannerHelper.readString("Enter New Name : ");
+
+        Specialization specialization =
+                ScannerHelper.readEnumChoice(
+                        "Select New Specialization",
+                        Specialization.values());
+
+        int experience =
+                ScannerHelper.readInt("Enter New Experience : ");
+
+        Shift shift =
+                ScannerHelper.readEnumChoice(
+                        "Select New Shift",
+                        Shift.values());
+
+        Doctor updatedDoctor = new Doctor(
+                id,
+                name,
+                specialization,
+                experience,
+                shift
+        );
+
+        boolean updated = repository.update(updatedDoctor);
+
+        if (updated) {
+            System.out.println("Doctor Updated Successfully.");
+            Program.logger.info("Doctor Updated : " + id);
+        } else {
+            System.out.println("Doctor Update Failed.");
+            Program.logger.error("Doctor Update Failed : " + id);
+        }
+
+        return updated;
+    }
 }
