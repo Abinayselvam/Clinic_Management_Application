@@ -1,5 +1,10 @@
 package org.examples.helper;
 
+<<<<<<< HEAD
+=======
+import org.examples.model.Patient;
+
+>>>>>>> 7bb398e2a56e4a9475b741915125afbb57a30061
 import java.util.Scanner;
 
 public class ScannerHelper {
@@ -101,4 +106,10 @@ public class ScannerHelper {
         }
     }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 7bb398e2a56e4a9475b741915125afbb57a30061
 }

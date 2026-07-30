@@ -97,6 +97,7 @@
 2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0008
 2026-07-29 11:52:28 AM | INFO  | Doctor Registered : D0010
 2026-07-29 12:01:23 PM | INFO  | Doctor Registered : D0011
+<<<<<<< HEAD
 2026-07-30 15:01:34 [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
 2026-07-30 15:01:34 [WARN] org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
 2026-07-30 15:01:35 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
@@ -184,3 +185,5 @@
 2026-07-30 15:30:14 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2026-07-30 15:30:15 [INFO] org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a06904] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 2026-07-30 15:30:40 [INFO] org.examples.operations.Program - Appointment Booked : A0002
+=======
+>>>>>>> 7bb398e2a56e4a9475b741915125afbb57a30061

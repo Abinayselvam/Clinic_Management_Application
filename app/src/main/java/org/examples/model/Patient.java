@@ -1,5 +1,6 @@
 package org.examples.model;
 
+<<<<<<< HEAD
 import jakarta.persistence.*;
 import org.examples.enums.Gender;
 @Entity
@@ -10,6 +11,13 @@ public class Patient {
     private String name;
     @Enumerated(EnumType.STRING)
     @Column(name = "gender")
+=======
+import org.examples.enums.Gender;
+
+public class Patient {
+    private String id;
+    private String name;
+>>>>>>> 7bb398e2a56e4a9475b741915125afbb57a30061
     private Gender gender;
     private int age;
     private String phone;

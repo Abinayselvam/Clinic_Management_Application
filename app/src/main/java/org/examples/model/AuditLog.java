@@ -1,5 +1,6 @@
 package org.examples.model;
 
+<<<<<<< HEAD
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -8,6 +9,12 @@ import java.time.LocalDateTime;
 public class AuditLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+=======
+import java.time.LocalDateTime;
+
+public class AuditLog {
+
+>>>>>>> 7bb398e2a56e4a9475b741915125afbb57a30061
     private int id;
     private LocalDateTime logTime;
     private String level;
