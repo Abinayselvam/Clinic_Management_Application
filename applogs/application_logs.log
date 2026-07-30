@@ -1,0 +1,189 @@
+2026-07-09 09:59:20 AM | INFO  | Doctor Registered : D0001
+2026-07-09 09:59:45 AM | INFO  | Doctor Registered : D0002
+2026-07-09 10:00:29 AM | INFO  | Doctor Registered : 3
+2026-07-09 10:01:09 AM | WARN  | There is no patient to view
+2026-07-09 10:01:33 AM | WARN  | No Patient Registered 
+2026-07-09 10:01:55 AM | INFO  | Patient Registered : P0001
+2026-07-09 10:02:12 AM | WARN  | Patient Already Registered.
+2026-07-09 10:02:39 AM | INFO  | Patient Registered : P0002
+2026-07-09 12:10:31 PM | INFO  | Doctor Registered : D0001
+2026-07-09 12:12:20 PM | INFO  | Doctor Registered : D0001
+2026-07-09 12:13:29 PM | INFO  | Doctor Registered : D0001
+2026-07-09 12:16:13 PM | INFO  | Doctor Registered : D0001
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0002
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0003
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0004
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0005
+2026-07-09 08:38:59 PM | INFO  | Doctor Registered : D0006
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0003
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:33:29 AM | INFO  | Doctor Registered : D0006
+2026-07-10 10:34:34 AM | INFO  | Doctor Registered : D0007
+2026-07-10 10:34:53 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0007
+2026-07-10 10:38:58 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:48:39 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:48:39 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:48:39 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:48:39 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0004
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:48:42 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:49:05 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:49:05 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:49:05 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0008
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0002
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0005
+2026-07-10 10:49:07 AM | INFO  | Doctor Registered : D0008
+2026-07-15 03:29:27 PM | INFO  | Patient Registered : D0001
+2026-07-15 03:29:53 PM | INFO  | Doctor Registered : D0002
+2026-07-15 03:29:53 PM | INFO  | Doctor Registered : D0005
+2026-07-15 03:29:53 PM | INFO  | Doctor Registered : D0008
+2026-07-15 03:30:48 PM | INFO  | Doctor Registered : D0002
+2026-07-15 03:30:48 PM | INFO  | Doctor Registered : D0005
+2026-07-15 03:30:48 PM | INFO  | Doctor Registered : D0008
+2026-07-15 03:30:48 PM | INFO  | Appointment Booked for user1 with Nandhini at 11:00 AM
+2026-07-15 03:31:30 PM | WARN  | No Patient Registered 
+2026-07-15 03:31:44 PM | INFO  | Patient Registered : D0002
+2026-07-15 03:31:51 PM | INFO  | Doctor Registered : D0002
+2026-07-15 03:31:51 PM | INFO  | Doctor Registered : D0005
+2026-07-15 03:31:51 PM | INFO  | Doctor Registered : D0008
+2026-07-15 03:31:56 PM | INFO  | Doctor Registered : D0002
+2026-07-15 03:31:56 PM | INFO  | Doctor Registered : D0005
+2026-07-15 03:31:56 PM | INFO  | Doctor Registered : D0008
+2026-07-15 03:31:56 PM | INFO  | Appointment Booked for user2 with Nandhini at 11:00 AM
+2026-07-15 05:12:28 PM | INFO  | Patient Registered : D0001
+2026-07-15 05:27:46 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:27:46 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:27:46 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:27:55 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:27:55 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:27:55 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:27:55 PM | INFO  | Appointment Booked for user1 with Nandhini at 09:30 AM
+2026-07-15 05:30:42 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:30:47 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:30:51 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:32:07 PM | INFO  | Appointment Booked for user1 with Nandhini at 10:00 AM
+2026-07-15 05:34:32 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:34:32 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:34:32 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:34:32 PM | INFO  | Appointment Booked for user1 with Nandhini at 09:30 AM
+2026-07-15 05:38:08 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:38:08 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:38:08 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:38:08 PM | INFO  | Appointment Booked for user1 with Nandhini at 09:30 AM
+2026-07-15 05:42:03 PM | INFO  | Doctor Registered : D0002
+2026-07-15 05:42:03 PM | INFO  | Doctor Registered : D0005
+2026-07-15 05:42:03 PM | INFO  | Doctor Registered : D0008
+2026-07-15 05:42:03 PM | INFO  | Appointment Booked for user1 with Nandhini at 09:30 AM
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0002
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0005
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0008
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0002
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0005
+2026-07-29 11:18:32 AM | INFO  | Doctor Registered : D0008
+2026-07-29 11:52:28 AM | INFO  | Doctor Registered : D0010
+2026-07-29 12:01:23 PM | INFO  | Doctor Registered : D0011
+<<<<<<< HEAD
+2026-07-30 15:01:34 [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-07-30 15:01:34 [WARN] org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2026-07-30 15:01:35 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-07-30 15:01:35 [WARN] org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-07-30 15:01:36 [WARN] org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-30 15:01:36 [INFO] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/clinicops]
+	Database driver: com.mysql.cj.jdbc.Driver
+	Database version: 8.0.41
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-07-30 15:01:38 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-30 15:01:38 [INFO] org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@63f2e0b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2026-07-30 15:01:51 [INFO] org.examples.operations.Program - Doctor Registered : D0016
+2026-07-30 15:03:22 [INFO] org.examples.operations.Program - Patient Registered : P0001
+2026-07-30 15:16:09 [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-07-30 15:16:09 [WARN] org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2026-07-30 15:16:09 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-07-30 15:16:09 [WARN] org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-07-30 15:16:11 [WARN] org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-30 15:16:11 [INFO] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/clinicops]
+	Database driver: com.mysql.cj.jdbc.Driver
+	Database version: 8.0.41
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-07-30 15:16:13 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-30 15:16:13 [INFO] org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@63f2e0b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2026-07-30 15:16:13 [WARN] org.examples.operations.Program - Delete Failed. Doctor not found : D0004
+2026-07-30 15:16:30 [INFO] org.examples.operations.Program - Doctor Deleted : D0011
+2026-07-30 15:17:21 [WARN] org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1364, SQLState: HY000
+2026-07-30 15:17:21 [ERROR] org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Field 'appointment_id' doesn't have a default value
+2026-07-30 15:21:48 [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-07-30 15:21:48 [WARN] org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2026-07-30 15:21:49 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-07-30 15:21:49 [WARN] org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-07-30 15:21:50 [WARN] org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-30 15:21:50 [INFO] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/clinicops]
+	Database driver: com.mysql.cj.jdbc.Driver
+	Database version: 8.0.41
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-07-30 15:21:52 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-30 15:21:52 [INFO] org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a06904] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2026-07-30 15:22:13 [WARN] org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1364, SQLState: HY000
+2026-07-30 15:22:13 [ERROR] org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Field 'id' doesn't have a default value
+2026-07-30 15:23:13 [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-07-30 15:23:13 [WARN] org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2026-07-30 15:23:13 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-07-30 15:23:14 [WARN] org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-07-30 15:23:15 [WARN] org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-30 15:23:15 [INFO] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/clinicops]
+	Database driver: com.mysql.cj.jdbc.Driver
+	Database version: 8.0.41
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-07-30 15:23:16 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-30 15:23:16 [INFO] org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a06904] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2026-07-30 15:23:34 [INFO] org.examples.operations.Program - Patient Registered : P0002
+2026-07-30 15:25:20 [WARN] org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1364, SQLState: HY000
+2026-07-30 15:25:20 [ERROR] org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Field 'id' doesn't have a default value
+2026-07-30 15:30:11 [INFO] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-07-30 15:30:11 [WARN] org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2026-07-30 15:30:11 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-07-30 15:30:12 [WARN] org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2026-07-30 15:30:13 [WARN] org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-30 15:30:13 [INFO] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/clinicops]
+	Database driver: com.mysql.cj.jdbc.Driver
+	Database version: 8.0.41
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+2026-07-30 15:30:14 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-30 15:30:15 [INFO] org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a06904] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2026-07-30 15:30:40 [INFO] org.examples.operations.Program - Appointment Booked : A0002
+=======
+>>>>>>> 7bb398e2a56e4a9475b741915125afbb57a30061
